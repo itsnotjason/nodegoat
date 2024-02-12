@@ -24,5 +24,5 @@ jobs:
           polaris_project_name: "NodeGoat"
           
           ### PULL REQUEST COMMENTS: Uncomment below to enable
-          polaris_prComment_enabled: true 
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Required when PR comments is enabled
+          #polaris_prComment_enabled: true 
+          #github_token: ${{ secrets.GITHUB_TOKEN }} # Required when PR comments is enabled
