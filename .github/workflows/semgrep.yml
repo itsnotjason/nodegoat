@@ -29,7 +29,8 @@ jobs:
       image: semgrep/semgrep
     steps:
     - uses: actions/checkout@v4
-    - run: semgrep scan --config auto
+    - run: semgrep scan --sarif --output=semgrep.sarif --config=policy
+    - run: semgrep ci
     
     # Scan code using project's configuration on https://semgrep.dev/manage
     - uses: returntocorp/semgrep-action@fcd5ab7459e8d91cb1777481980d1b18b4fc6735
