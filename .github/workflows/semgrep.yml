@@ -16,7 +16,11 @@ jobs:
     name: semgrep/ci
     runs-on: ubuntu-latest
     permissions:
+      # This permission is required when uploading sarifs to any repository at GitHub
+      security-events: write
+      # These permissions are only required when uploading sarifs to private and internal repositories at GitHub
       contents: read
+      actions: read
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
     container:
