@@ -13,7 +13,9 @@ on:
 name: Semgrep
 jobs:
   semgrep:
-    name: semgrep/ci
+    # User definable name of this GitHub Actions job.
+    name: semgrep-oss/scan
+    # If you are self-hosting, change the following `runs-on` value: 
     runs-on: ubuntu-latest
     permissions:
       # This permission is required when uploading sarifs to any repository at GitHub
@@ -27,7 +29,7 @@ jobs:
       image: semgrep/semgrep
     steps:
     - uses: actions/checkout@v4
-    - run: semgrep ci
+    - run: semgrep scan --config auto
     
     # Scan code using project's configuration on https://semgrep.dev/manage
     - uses: returntocorp/semgrep-action@fcd5ab7459e8d91cb1777481980d1b18b4fc6735
